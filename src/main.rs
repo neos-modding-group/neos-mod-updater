@@ -1,4 +1,5 @@
 use std::{fs, io};
+use std::io::Write;
 use std::path::Path;
 use std::time::Instant;
 
@@ -6,7 +7,22 @@ use pelite::pe32::{Pe, PeFile};
 use sha2::{Digest, Sha256, Sha512};
 
 fn main() {
-    hash_test();
+    clr_parse();
+}
+
+fn clr_parse() {
+    let path = r"C:\Program Files (x86)\Steam\steamapps\common\NeosVR\Neos_Data\Managed\FrooxEngine.dll";
+    let map = pelite::FileMap::open(path).unwrap();
+    let pe = PeFile::from_bytes(&map).unwrap();
+    let headers = pe.section_headers();
+
+    let text_header = headers.by_name(".text").unwrap();
+    let text_bytes = pe.get_section_bytes(text_header).unwrap();
+    println!("headers: {:?}", headers);
+    println!("len: {}", text_bytes.len());
+
+    let mut f = fs::File::create("text.dat").unwrap();
+    f.write_all(text_bytes).unwrap();
 }
 
 fn hash_test() {
