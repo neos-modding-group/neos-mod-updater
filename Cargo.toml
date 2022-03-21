@@ -7,3 +7,5 @@ edition = "2021"
 
 [dependencies]
 pelite = "^0.9.0"
+sha2 = "^0.10.2"
+base16ct = "^0.1.1"
