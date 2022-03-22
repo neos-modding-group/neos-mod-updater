@@ -121,9 +121,14 @@
             "flags": ["file"],
             "versions": {
                 "2.2.0.0": {
-                    "url": "https://github.com/zkxs/NeosModLoader/releases/download/1.4.1/0Harmony.dll",
-                    "hash": "1f83152c58985b9216fa87c4e5d3c81f1e3e85d633e41533666d3f616af9c715",
-                    "installLocation": "/"
+                    "releaseUrl": "https://github.com/pardeike/Harmony/releases/tag/v2.2.0.0",
+                    "artifacts": [
+                        {
+                            "url": "https://github.com/zkxs/NeosModLoader/releases/download/1.4.1/0Harmony.dll",
+                            "hash": "1f83152c58985b9216fa87c4e5d3c81f1e3e85d633e41533666d3f616af9c715",
+                            "installLocation": "/"
+                        }
+                    ]
                 }
             }
         }
