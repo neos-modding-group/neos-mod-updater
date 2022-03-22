@@ -1,0 +1,131 @@
+{
+    "schemaVersion": "1.0.0",
+    "mods": {
+        "MotionBlurDisable.dll": {
+            "name": "Motion Blur Disable",
+            "description": "Disables motion blur for all of your cameras, including your view",
+            "author": "runtime",
+            "authorUrl": "https://github.com/zkxs",
+            "sourceLocation": "https://github.com/zkxs/MotionBlurDisable",
+            "tags": ["motion blur", "rendering"],
+            "category": "Visual Tweaks",
+            "versions": {
+                "1.0.0.0": {
+                    "changelog": "Initial release",
+                    "artifacts": [
+                        {
+                            "url": "https://github.com/zkxs/MotionBlurDisable/releases/download/1.0.0.0/MotionBlurDisable.dll",
+                            "hash": "59a3cbc4ff8edc40c9eccfbfbb98cd45a7bccc581c132868d106069828933753"
+                        }
+                    ]
+                },
+                "1.0.1.0": {
+                    "changelog": "Fix a bug where it would disable motion blur on all cameras EXCEPT your actual view.",
+                    "artifacts": [
+                        {
+                            "url": "https://github.com/zkxs/MotionBlurDisable/releases/download/1.0.1.0/MotionBlurDisable.dll",
+                            "hash": "b5bb9d8014a0f9b1d61e21e796d78dccdf1352f23cd32812f4850b878ae4944c"
+                        }
+                    ]
+                },
+                "1.1.0.0": {
+                    "changelog": "Improve compatibility with other mods.",
+                    "artifacts": [
+                        {
+                            "url": "https://github.com/zkxs/MotionBlurDisable/releases/download/1.1.0.0/MotionBlurDisable.dll",
+                            "hash": "4576eaf45de2e5b7ad1871035fcad1fbeda3ff24fcc4f36741ee2345c8143b39"
+                        }
+                    ]
+                }
+            }
+        },
+        "ExportNeosToJson.dll": {
+            "name": "Export Neos to JSON",
+            "description": "Lets you export Neos objects as their native format",
+            "author": "runtime",
+            "authorUrl": "https://github.com/zkxs",
+            "sourceLocation": "https://github.com/zkxs/ExportNeosToJson",
+            "tags": ["export"],
+            "category": "Technical Tweaks",
+            "versions": {
+                "1.1.1.0": {
+                    "changelog": "Fix method hook for Neos 2021.9.13.1057",
+                    "neosVersionCompatibility": ">=2021.9.13.1057",
+                    "artifacts": [
+                        {
+                            "url": "https://github.com/zkxs/ExportNeosToJson/releases/download/1.1.1.0/ExportNeosToJson.dll",
+                            "hash": "0ea4e48b35302d0a0f9ab91b3fe6ad79c6f2002f748cb815723813dba34ddac7"
+                        }
+                    ]
+                },
+                "1.0.1.0": {
+                    "changelog": "Add BSON and LZ4BSON support",
+                    "neosVersionCompatibility": "<2021.9.13.1057",
+                    "artifacts": [
+                        {
+                            "url": "https://github.com/zkxs/ExportNeosToJson/releases/download/1.1.0.0/ExportNeosToJson.dll",
+                            "hash": "b5bb9d8014a0f9b1d61e21e796d78dccdf1352f23cd32812f4850b878ae4944c"
+                        }
+                    ]
+                },
+                "1.0.0.0": {
+                    "changelog": "Initial release. Has a bug. Don't use it.",
+                    "neosVersionCompatibility": "<2021.9.13.1057",
+                    "flags": ["broken"],
+                    "artifacts": [
+                        {
+                            "url": "https://github.com/zkxs/ExportNeosToJson/releases/download/1.0.0.0/ExportNeosToJson.dll",
+                            "hash": "e3712d0683f5e1ae2b6f0db644f23136d6d2e7625bdefc7e64f6a2dd732b9095"
+                        }
+                    ]
+                }
+            }
+        },
+        "NeosModLoader.dll": {
+            "name": "Neos Mod Loader",
+            "description": "A mod loader for Neos VR.",
+            "author": "runtime",
+            "authorUrl": "https://github.com/zkxs",
+            "sourceLocation": "https://github.com/zkxs/NeosModLoader",
+            "tags": ["modloader"],
+            "category": "Plugins",
+            "dependencies": {
+                "0Harmony.dll": {
+                    "version": "^2.2.0.0"
+                }
+            },
+            "flags": ["plugin"],
+            "versions": {
+                "1.8.0": {
+                    "changelog": "Release the new mod configuration system",
+                    "releaseUrl": "https://github.com/zkxs/NeosModLoader/releases/tag/1.8.0",
+                    "neosVersionCompatibility": ">=2021.10.17.1326",
+                    "artifacts": [
+                        {
+                            "url": "https://github.com/zkxs/NeosModLoader/releases/download/1.8.0/NeosModLoader.dll",
+                            "hash": "71ca363003ecbd1668bfbd8f70c30253c9417780110bd3ad8e18d51ed46b0939",
+                            "installLocation": "/Libraries"
+                        }
+                    ]
+                }
+            }
+        },
+        "0Harmony.dll": {
+            "name": "Harmony",
+            "description": "A library for patching, replacing and decorating .NET and Mono methods during runtime ",
+            "author": "pardeike",
+            "authorUrl": "https://www.patreon.com/pardeike",
+            "sourceLocation": "https://github.com/pardeike/Harmony",
+            "website": "https://harmony.pardeike.net/",
+            "category": "Libraries",
+            "flags": ["file"],
+            "versions": {
+                "2.2.0.0": {
+                    "url": "https://github.com/zkxs/NeosModLoader/releases/download/1.4.1/0Harmony.dll",
+                    "hash": "1f83152c58985b9216fa87c4e5d3c81f1e3e85d633e41533666d3f616af9c715",
+                    "installLocation": "/"
+                }
+            }
+        }
+    }
+}

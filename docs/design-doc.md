@@ -80,6 +80,8 @@ At minimum, we have to trust:
 8. If the PR has enough approvals, merge the PR
 
 ## API Schema
+[Example manifest](example-manifest.json)
+
 Top-level object:
 - Schema version
 - Content version? Maybe just use an etag for this.
@@ -89,29 +91,33 @@ Top-level object:
     - Name
     - Description
     - Author
+    - Author URL
     - Source Location
     - Website
     - tag list (list of strings) used for search?
     - category (one string)
     - flag list (list of strings) special meaning
     - conflicts (list of mod ids)
+    - dependencies
+      - dependency map
+        - key: mod id
+        - value: dependency
+          - version specifier
     - Version Map (this might be in a separate json object)
       - Key: version number
       - Value: version
         - changelog
+        - releaseUrl
         - Neos version compatibility? (NOT semver `2022.1.28.1310` but `<` and `>` rules will work fine)
         - Modloader version compatibility? (semver)
-        - Mod dependencies? (circular dependencies are actually okay), list of mod ids + version specifiers?. NML dependency is implied by default
-          - dependency
-            - mod id
-            - version specifier
+        - flag list (list of strings) special meaning, inherits from mod
+        - conflicts (list of mod ids), inherits from mod
+        - Mod dependencies? (circular dependencies are actually okay), list of mod ids + version specifiers?. NML dependency is implied by default, inherits from mod
         - Artifact list
           - Artifact
             - download URL
             - file hash
             - install location, defaults to `/nml_mods`
-        - flag list (list of strings) special meaning, inherits from mod
-        - conflicts (list of mod ids), inherits from mod
 
 Flags:
 - Mod Flags
